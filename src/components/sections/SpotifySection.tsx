@@ -58,7 +58,7 @@ export function SpotifySection() {
       </div>
 
       <a href="https://open.spotify.com/user/matheus.wenes" target="_blank" rel="noopener noreferrer" className="spotify-main-btn">
-        Abrir Perfil Spotify
+        Abrir Spotify
       </a>
     </div>
   );
