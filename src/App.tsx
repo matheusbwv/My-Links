@@ -27,9 +27,10 @@ function App() {
     const diffX = touchStartX.current - touchEndX;
     const diffY = touchStartY.current - touchEndY;
 
-    // Verifica se é um swipe horizontal intencional
-    // diffX > 50px de distância E movimento horizontal deve ser maior que o vertical
-    if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+    // Swipe estritamente horizontal
+    // Requer um movimento horizontal significativo (> 50) e um movimento vertical muito baixo (< 35)
+    // Isso ignora completamente qualquer tentativa de swipe diagonal
+    if (Math.abs(diffX) > 50 && Math.abs(diffY) < 35) {
       const currentIndex = tabOrder.indexOf(activeTab);
       if (diffX > 0 && currentIndex < tabOrder.length - 1) {
         setActiveTab(tabOrder[currentIndex + 1]);
