@@ -1,0 +1,18 @@
+.content-area {
+  position: relative;
+  z-index: 5;
+}
+
+.tab-pane {
+  display: block;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--glass-border);
+}
