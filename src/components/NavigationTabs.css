@@ -25,6 +25,8 @@
   align-items: center;
   gap: 0.4rem;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 .tab-btn svg {

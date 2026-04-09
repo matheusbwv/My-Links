@@ -68,6 +68,8 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 .glass-btn::before {
