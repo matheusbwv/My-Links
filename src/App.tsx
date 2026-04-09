@@ -11,25 +11,34 @@ const tabOrder = ['links', 'spotify', 'curriculum'];
 function App() {
   const [activeTab, setActiveTab] = useState('links');
   const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    
     const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX;
+    const touchEndY = e.changedTouches[0].clientY;
+    
+    const diffX = touchStartX.current - touchEndX;
+    const diffY = touchStartY.current - touchEndY;
 
-    if (Math.abs(diff) > 50) {
+    // Verifica se é um swipe horizontal intencional
+    // diffX > 50px de distância E movimento horizontal deve ser maior que o vertical
+    if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
       const currentIndex = tabOrder.indexOf(activeTab);
-      if (diff > 0 && currentIndex < tabOrder.length - 1) {
+      if (diffX > 0 && currentIndex < tabOrder.length - 1) {
         setActiveTab(tabOrder[currentIndex + 1]);
-      } else if (diff < 0 && currentIndex > 0) {
+      } else if (diffX < 0 && currentIndex > 0) {
         setActiveTab(tabOrder[currentIndex - 1]);
       }
     }
     touchStartX.current = null;
+    touchStartY.current = null;
   };
 
   return (
