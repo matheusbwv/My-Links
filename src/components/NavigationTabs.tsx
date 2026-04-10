@@ -1,5 +1,6 @@
 import { FaLink, FaSpotify, FaRegFileCode } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import './NavigationTabs.css';
 
 interface NavigationTabsProps {
@@ -8,10 +9,12 @@ interface NavigationTabsProps {
 }
 
 export function NavigationTabs({ activeTab, onTabChange }: NavigationTabsProps) {
+  const { t } = useTranslation();
+
   const tabs = [
-    { id: 'links', label: 'Links', icon: FaLink },
-    { id: 'spotify', label: 'Playlists', icon: FaSpotify },
-    { id: 'curriculum', label: 'Currículo', icon: FaRegFileCode }
+    { id: 'links', label: t('nav.links'), icon: FaLink },
+    { id: 'spotify', label: t('nav.spotify'), icon: FaSpotify },
+    { id: 'curriculum', label: t('nav.curriculum'), icon: FaRegFileCode }
   ];
 
   return (

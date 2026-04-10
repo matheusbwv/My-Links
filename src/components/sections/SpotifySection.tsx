@@ -2,6 +2,7 @@ import { FaSpotify, FaCirclePlay } from "react-icons/fa6";
 import goldImg from '../../assets/gold-mixtape.jpg';
 import sindicatoImg from '../../assets/sindicato-dos-graves.jpg';
 import riffsImg from '../../assets/riffs-de-aco.jpg';
+import { useTranslation } from 'react-i18next';
 import "./SpotifySection.css";
 
 interface PlaylistProps {
@@ -29,11 +30,13 @@ function PlaylistCard({ href, imgSrc, title, author }: PlaylistProps) {
 }
 
 export function SpotifySection() {
+  const { t } = useTranslation();
+
   return (
     <div className="glass-panel spotify-container fade-in-up" style={{ animationDelay: '0.3s' }}>
       <div className="spotify-header">
         <FaSpotify className="spotify-icon" />
-        <h2>Recently Played</h2>
+        <h2>{t('spotify.title')}</h2>
       </div>
 
       <div className="playlist-cards">
@@ -58,7 +61,7 @@ export function SpotifySection() {
       </div>
 
       <a href="https://open.spotify.com/user/matheus.wenes" target="_blank" rel="noopener noreferrer" className="spotify-main-btn">
-        Abrir Spotify
+        {t('spotify.button')}
       </a>
     </div>
   );

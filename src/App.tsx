@@ -6,11 +6,14 @@ import { SpotifySection } from './components/sections/SpotifySection';
 import { CurriculumSection } from './components/sections/CurriculumSection';
 import { useSwipeable } from 'react-swipeable';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 import './App.css';
 
 const tabOrder = ['links', 'spotify', 'curriculum'];
 
 function App() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('links');
   const [direction, setDirection] = useState(0);
 
@@ -62,6 +65,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <LanguageSwitcher />
       <ProfileHeader />
       
       <NavigationTabs activeTab={activeTab} onTabChange={handleTabChange} />
@@ -85,7 +89,7 @@ function App() {
       </main>
 
       <footer>
-        <p>&copy; {new Date().getFullYear()} Matheus Wenes. Todos os direitos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} Matheus Wenes. {t('footer.rights')}</p>
       </footer>
     </div>
   );

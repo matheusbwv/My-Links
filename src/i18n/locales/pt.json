@@ -1,0 +1,58 @@
+{
+  "profile": {
+    "role": "Desenvolvedor Back-end & Gamer",
+    "status": "O céu é o limite"
+  },
+  "nav": {
+    "links": "Links",
+    "spotify": "Playlists",
+    "curriculum": "Currículo"
+  },
+  "curriculum": {
+    "academic": {
+      "title": "Sistemas de Informação",
+      "institution": "Centro Universitário Paraíso - UniFAP"
+    },
+    "description": {
+      "title": "Descrição",
+      "text": "Sou um profissional com experiência em suporte técnico, atualmente colaborador na <strong>TIVIT</strong>, atuando na instalação, configuração e manutenção de sistemas e equipamentos. Habilidade em atendimento ao usuário e resolução de problemas com agilidade. Conhecimento em informática, redes e boas práticas de TI. Facilidade para trabalho em equipe e boa comunicação. Comprometido com a eficiência e o funcionamento adequado dos sistemas."
+    },
+    "experience": {
+      "title": "Experiência Profissional",
+      "current": "Atual",
+      "items": {
+        "tivit": {
+          "company": "TIVIT",
+          "role": "Suporte de TI (Help Desk)",
+          "description": "Atuação no gerenciamento de chamados corporativos e garantia de SLAs de atendimento. Responsável pela resolução ágil de incidentes focados em redes e infraestrutura geral de TI, assegurando a estabilidade operacional."
+        },
+        "lamic": {
+          "company": "Laboratório LAMIC",
+          "role": "Suporte de TI",
+          "description": "Atendimento aos usuários (clientes internos e externos), resolução de problemas técnicos, instalação e configuração de sistemas."
+        },
+        "edn": {
+          "company": "EDN Soluções",
+          "role": "Técnico de TI Júnior I",
+          "description": "Suporte técnico e atendimento. Acompanhamento integral para garantir que o sistema funcione adequadamente no ambiente do usuário."
+        },
+        "nexti": {
+          "company": "NExTI - UniFAP",
+          "role": "Estágio Dev Backend I (Django)",
+          "description": "Desenvolvedor com experiência na criação e implementação de sistemas empresariais escálaveis usando Django, além de vivência técnica em projetos com PHP (Laravel) e TS/JS."
+        }
+      }
+    },
+    "skills": {
+      "title": "Tecnologias & Stack"
+    }
+  },
+  "spotify": {
+    "title": "Tocadas Recentemente",
+    "author": "Playlist • {{author}}",
+    "button": "Abrir Spotify"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "profile": {
+    "role": "Back-end Developer & Gamer",
+    "status": "The sky is the limit"
+  },
+  "nav": {
+    "links": "Links",
+    "spotify": "Playlists",
+    "curriculum": "Resume"
+  },
+  "curriculum": {
+    "academic": {
+      "title": "Information Systems",
+      "institution": "Centro Universitário Paraíso - UniFAP"
+    },
+    "description": {
+      "title": "Description",
+      "text": "I am a professional with experience in technical support, currently working at <strong>TIVIT</strong>, focusing on the installation, configuration, and maintenance of systems and equipment. Skilled in user service and agile problem-solving. Knowledgeable in IT, networking, and best practices. Strong teamwork and communication skills. Committed to efficiency and proper system functioning."
+    },
+    "experience": {
+      "title": "Professional Experience",
+      "current": "Present",
+      "items": {
+        "tivit": {
+          "company": "TIVIT",
+          "role": "IT Support (Help Desk)",
+          "description": "Handling corporate tickets and ensuring service SLAs. Responsible for agile resolution of incidents focused on networking and general IT infrastructure, ensuring operational stability."
+        },
+        "lamic": {
+          "company": "Laboratory LAMIC",
+          "role": "IT Support",
+          "description": "Assisting users (internal and external customers), solving technical issues, installing and configuring systems."
+        },
+        "edn": {
+          "company": "EDN Soluções",
+          "role": "Junior IT Technician I",
+          "description": "Technical support and customer service. Integral monitoring to ensure the system works properly in the user's environment."
+        },
+        "nexti": {
+          "company": "NExTI - UniFAP",
+          "role": "Backend Dev Intern I (Django)",
+          "description": "Developer experienced in creating and implementing scalable business systems using Django, along with technical experience in project work using PHP (Laravel) and TS/JS."
+        }
+      }
+    },
+    "skills": {
+      "title": "Technologies & Stack"
+    }
+  },
+  "spotify": {
+    "title": "Recently Played",
+    "author": "Playlist • {{author}}",
+    "button": "Open Spotify"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

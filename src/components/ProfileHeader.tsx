@@ -1,9 +1,12 @@
 import perfilImg from '../assets/perfil.png';
 import { FaRocket } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './ProfileHeader.css';
 
 export function ProfileHeader() {
+  const { t } = useTranslation();
+
   return (
     <header className="profile-header fade-in-up" style={{ animationDelay: '0.1s' }}>
       <div className="avatar-container">
@@ -19,7 +22,7 @@ export function ProfileHeader() {
         />
       </div>
       <h1 className="name">Math<span className="text-glow">eu</span>s Wenes</h1>
-      <p className="role">Back-end Developer & Gamer</p>
+      <p className="role">{t('profile.role')}</p>
       
       <motion.div 
         className="status-badge phrase-badge"
@@ -33,7 +36,7 @@ export function ProfileHeader() {
         >
           <FaRocket />
         </motion.span> 
-        <span>O céu é o limite</span>
+        <span>{t('profile.status')}</span>
       </motion.div>
     </header>
   );
