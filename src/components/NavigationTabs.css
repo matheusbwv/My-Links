@@ -5,6 +5,8 @@
   position: relative;
   z-index: 2;
   gap: 0.25rem;
+  -webkit-tap-highlight-color: transparent !important;
+  user-select: none;
 }
 
 .tab-btn {
@@ -20,17 +22,28 @@
   transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 14px;
   z-index: 2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+  user-select: none; /* remove blue highlight no Android */
+}
+
+.tab-content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
-  white-space: nowrap;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-  outline: none !important;
+  position: relative;
+  z-index: 3;
 }
 
-.tab-btn svg {
+.tab-content-wrapper svg {
   font-size: 1.1rem;
+  pointer-events: none; /* Prevents svg from capturing touch and generating highlight background */
 }
 
 .tab-btn.active {
@@ -41,22 +54,23 @@
   color: #ccc;
 }
 
-.tab-indicator {
+.tab-indicator-motion {
   position: absolute;
-  top: 0.5rem;
-  bottom: 0.5rem;
+  top: 0;
   left: 0;
-  width: 0; /* dynamically set by JS */
+  right: 0;
+  bottom: 0;
   background: var(--glass-border);
   border-radius: 14px;
   z-index: 1;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 @media (max-width: 480px) {
   .tab-btn {
     font-size: 0.75rem;
     padding: 0.6rem 0.2rem;
+  }
+  .tab-content-wrapper {
     flex-direction: column;
     gap: 0.2rem;
   }

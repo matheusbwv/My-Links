@@ -1,71 +1,87 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { ProfileHeader } from './components/ProfileHeader';
 import { NavigationTabs } from './components/NavigationTabs';
 import { SocialLinks } from './components/sections/SocialLinks';
 import { SpotifySection } from './components/sections/SpotifySection';
 import { CurriculumSection } from './components/sections/CurriculumSection';
+import { useSwipeable } from 'react-swipeable';
+import { AnimatePresence, motion } from 'framer-motion';
 import './App.css';
 
 const tabOrder = ['links', 'spotify', 'curriculum'];
 
 function App() {
   const [activeTab, setActiveTab] = useState('links');
-  const touchStartX = useRef<number | null>(null);
-  const touchStartY = useRef<number | null>(null);
+  const [direction, setDirection] = useState(0);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-    touchStartY.current = e.touches[0].clientY;
+  const handleTabChange = (newTab: string) => {
+    const currentIndex = tabOrder.indexOf(activeTab);
+    const newIndex = tabOrder.indexOf(newTab);
+    if (currentIndex !== newIndex) {
+      setDirection(newIndex > currentIndex ? 1 : -1);
+      setActiveTab(newTab);
+    }
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null || touchStartY.current === null) return;
-    
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchEndY = e.changedTouches[0].clientY;
-    
-    const diffX = touchStartX.current - touchEndX;
-    const diffY = touchStartY.current - touchEndY;
-
-    // Swipe estritamente horizontal
-    // Requer um movimento horizontal significativo (> 50) e um movimento vertical muito baixo (< 35)
-    // Isso ignora completamente qualquer tentativa de swipe diagonal
-    if (Math.abs(diffX) > 50 && Math.abs(diffY) < 35) {
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
       const currentIndex = tabOrder.indexOf(activeTab);
-      if (diffX > 0 && currentIndex < tabOrder.length - 1) {
+      if (currentIndex < tabOrder.length - 1) {
+        setDirection(1);
         setActiveTab(tabOrder[currentIndex + 1]);
-      } else if (diffX < 0 && currentIndex > 0) {
+      }
+    },
+    onSwipedRight: () => {
+      const currentIndex = tabOrder.indexOf(activeTab);
+      if (currentIndex > 0) {
+        setDirection(-1);
         setActiveTab(tabOrder[currentIndex - 1]);
       }
-    }
-    touchStartX.current = null;
-    touchStartY.current = null;
+    },
+    trackMouse: false, // trackMouse desativado para evitar bugs no desktop
+    delta: 50, // Pelo menos 50px de swipe pra prevenir mudança acidental
+    swipeDuration: 500, // Evita swipe muito lento de acionar action
+  });
+
+  const slideVariants = {
+    initial: (dir: number) => ({
+      x: dir > 0 ? 30 : -30,
+      opacity: 0,
+    }),
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.3, ease: 'easeOut' as const }
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? -30 : 30,
+      opacity: 0,
+      transition: { duration: 0.2, ease: 'easeIn' as const }
+    })
   };
 
   return (
-    <div className="app-container" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+    <div className="app-container">
       <ProfileHeader />
       
-      <NavigationTabs activeTab={activeTab} onTabChange={setActiveTab} />
+      <NavigationTabs activeTab={activeTab} onTabChange={handleTabChange} />
       
-      <main className="content-area">
-        {activeTab === 'links' && (
-          <section id="links" className="tab-pane active" style={{ animation: 'fade-in 0.4s ease forwards' }}>
-            <SocialLinks />
-          </section>
-        )}
-        
-        {activeTab === 'spotify' && (
-          <section id="spotify" className="tab-pane active" style={{ animation: 'fade-in 0.4s ease forwards' }}>
-            <SpotifySection />
-          </section>
-        )}
-        
-        {activeTab === 'curriculum' && (
-          <section id="curriculum" className="tab-pane active" style={{ animation: 'fade-in 0.4s ease forwards' }}>
-            <CurriculumSection />
-          </section>
-        )}
+      <main className="content-area" {...handlers} style={{ overflow: 'hidden', position: 'relative' }}>
+        <AnimatePresence mode="wait" custom={direction} initial={false}>
+          <motion.div
+            key={activeTab}
+            custom={direction}
+            variants={slideVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="tab-pane-container"
+          >
+            {activeTab === 'links' && <SocialLinks />}
+            {activeTab === 'spotify' && <SpotifySection />}
+            {activeTab === 'curriculum' && <CurriculumSection />}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       <footer>
