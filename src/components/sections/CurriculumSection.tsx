@@ -17,12 +17,11 @@ export function CurriculumSection() {
       <div className="cv-section compact">
         <h3><FaGamepad /> Descrição</h3>
         <p className="about-text">
-          Atualmente cursando Sistemas de Informação na UniFAP e colaborador da
-          <strong> TIVIT</strong>.
-          Minha base profissional foca em infraestrutura, suporte corporativo e principalmente no
-          <strong> desenvolvimento Back-end</strong> (criação de sistemas empresariais, Django,
-          metodologias ágeis SCRUM e Design Thinking).
-          Gamer nas horas vagas explorando Zelda, LoL e Terraria.
+          Sou um profissional com experiência em suporte técnico, atualmente colaborador na
+          <strong> TIVIT</strong>, atuando na instalação, configuração e manutenção de sistemas
+          e equipamentos. Habilidade em atendimento ao usuário e resolução de problemas com agilidade.
+          Conhecimento em informática, redes e boas práticas de TI. Facilidade para trabalho em equipe
+          e boa comunicação. Comprometido com a eficiência e o funcionamento adequado dos sistemas.
         </p>
       </div>
 
