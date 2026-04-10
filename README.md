@@ -45,4 +45,4 @@ Suporte nativo para **Português (PT-BR)** e **Inglês (EN-US)** com alternânci
 *Back-end Developer & Gamer*
 
 ---
-*Built with ❤️ by Matheus Wenes*
+*Built by Matheus Wenes*
