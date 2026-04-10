@@ -1,4 +1,6 @@
 import perfilImg from '../assets/perfil.png';
+import { FaRocket } from 'react-icons/fa6';
+import { motion } from 'framer-motion';
 import './ProfileHeader.css';
 
 export function ProfileHeader() {
@@ -18,9 +20,21 @@ export function ProfileHeader() {
       </div>
       <h1 className="name">Math<span className="text-glow">eu</span>s Wenes</h1>
       <p className="role">Back-end Developer & Gamer</p>
-      <div className="status-badge">
-        <span className="pulse"></span> Disponível & Online
-      </div>
+      
+      <motion.div 
+        className="status-badge phrase-badge"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <motion.span 
+          className="rocket-icon"
+          animate={{ y: [0, -3, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        >
+          <FaRocket />
+        </motion.span> 
+        <span>O céu é o limite</span>
+      </motion.div>
     </header>
   );
 }
