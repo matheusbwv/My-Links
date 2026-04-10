@@ -1,73 +1,48 @@
-# React + TypeScript + Vite
+# 🔗 My-Links | Personal Portfolio & Link Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, minimalist Single Page Application (SPA) designed to centralize professional and personal links in a sleek, "Flat-Dark" aesthetic. 
 
-Currently, two official plugins are available:
+## ✨ Visão Geral | Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este projeto é um **hub pessoal** moderno, focado em alta performance e uma experiência de usuário imersiva. Ele combina um estilo retro-moderno com tecnologias de ponta para apresentar informações de forma clara e elegante.
 
-## React Compiler
+This project is a modern **personal hub**, focused on high performance and an immersive user experience. It combines a retro-modern style with cutting-edge technologies to present information clearly and elegantly.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Funcionalidades | Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🌎 Bilingue | Bilingual Support
+Suporte nativo para **Português (PT-BR)** e **Inglês (EN-US)** com alternância instantânea através de uma interface intuitiva de bandeiras.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🎨 Design Premium
+*   **Estética "Flat-Dark"**: Cores harmoniosas e modo escuro nativo.
+*   **Glassmorphism**: Efeitos de transparência e desfoque estilizados.
+*   **Animações Fluídas**: Transições suaves entre seções e interações dinâmicas usando Framer Motion.
+*   **Mobile-First**: Experiência otimizada para smartphones com suporte a gestos de swipe.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🍱 Seções Inteligentes
+*   **Social Links**: Acesso rápido a GitHub, LinkedIn, Instagram e Steam.
+*   **Spotify Integration**: Visualização de playlists e status de músicas recentemente tocadas.
+*   **Currículo Interativo**: Linha do tempo profissional e stack de tecnologias detalhada.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Tecnologias | Technologies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **React 19** - UI moderna e componentes reativos.
+- **TypeScript** - Segurança e robustez no código.
+- **Vite** - Build ultrarrápido.
+- **Framer Motion** - Animações e gestos complexos.
+- **i18next** - Sistema robusto de internacionalização.
+- **Phosphor & React Icons** - Iconografia moderna e consistente.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 👨‍💻 Autor | Author
+
+**Matheus Wenes**  
+*Back-end Developer & Gamer*
+
+---
+*Built with ❤️ by Matheus Wenes*
