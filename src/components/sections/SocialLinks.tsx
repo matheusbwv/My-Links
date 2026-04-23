@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin, FaSteam, FaInstagram, FaChevronRight } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaInstagram, FaChevronRight } from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
 import React, { useRef } from "react";
 import "./SocialLinks.css";
 
@@ -79,12 +80,12 @@ export function SocialLinks() {
         brandClass="linkedin-icon"
       />
       <LinkItem 
-        href="https://steamcommunity.com/id/SrCastiell"
-        icon={<FaSteam />}
-        title="Steam"
-        subtitle="SrCastiell"
+        href="mailto:matheus.wenes@gmail.com"
+        icon={<SiGmail />}
+        title="Email"
+        subtitle="matheus.wenes@gmail.com"
         delay="0.5s"
-        brandClass="steam-icon"
+        brandClass="gmail-icon"
       />
       <LinkItem 
         href="https://www.instagram.com/matheuswenes/"
