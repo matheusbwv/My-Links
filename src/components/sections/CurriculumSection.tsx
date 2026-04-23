@@ -1,4 +1,4 @@
-import { FaUserGraduate, FaTerminal, FaBriefcase, FaGamepad, FaPython, FaLaravel, FaJava, FaJs, FaLinux } from "react-icons/fa6";
+import { FaUserGraduate, FaTerminal, FaBriefcase, FaGamepad, FaPython, FaBrain, FaMicrochip, FaJs, FaLinux } from "react-icons/fa6";
 import { useTranslation, Trans } from 'react-i18next';
 import "./CurriculumSection.css";
 
@@ -63,11 +63,11 @@ export function CurriculumSection() {
       <div className="cv-section">
         <h3><FaTerminal /> {t('curriculum.skills.title')}</h3>
         <div className="skills-grid">
-          <div className="skill-tag"><FaPython/> Django / Python</div>
-          <div className="skill-tag"><FaLaravel/> PHP / Laravel</div>
-          <div className="skill-tag"><FaJava/> Java</div>
-          <div className="skill-tag"><FaJs/> JavaScript / TS</div>
-          <div className="skill-tag"><FaLinux/> Linux / Servidores</div>
+          <div className="skill-tag"><FaPython /> Python</div>
+          <div className="skill-tag"><FaBrain /> IA / Machine Learning</div>
+          <div className="skill-tag"><FaMicrochip /> Hardware</div>
+          <div className="skill-tag"><FaJs /> JavaScript / TypeScript</div>
+          <div className="skill-tag"><FaLinux /> Linux / Servidores</div>
         </div>
       </div>
     </div>

@@ -34,9 +34,10 @@
 }
 
 .btn-text span {
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-muted);
-  font-weight: 300;
+  font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
