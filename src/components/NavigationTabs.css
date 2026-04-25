@@ -7,6 +7,9 @@
   box-sizing: border-box;
   padding: 0.5rem;
   border-radius: 20px;
+  background: rgba(7, 7, 17, 0.80);
+  border: 1px solid rgba(100, 50, 200, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 2;
   gap: 0.25rem;
@@ -67,8 +70,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--glass-border);
+  background: linear-gradient(135deg, rgba(100, 30, 200, 0.22) 0%, rgba(20, 60, 220, 0.18) 100%);
+  border: 1px solid rgba(120, 60, 220, 0.22);
   border-radius: 14px;
+  box-shadow: 0 0 12px rgba(100, 40, 200, 0.18);
   z-index: 1;
 }
 

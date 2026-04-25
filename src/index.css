@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=JetBrains+Mono:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-  --bg-base: #000000;
-  --glass-bg: #0c0c0c;
-  --glass-border: #1a1a1a;
-  --glass-hover: #141414;
-  
+  --bg-base: #05050f;
+  --glass-bg: rgba(7, 7, 17, 0.85);
+  --glass-border: #191926;
+  --glass-hover: rgba(14, 14, 28, 0.95);
+
   --text-main: #ffffff;
   --text-muted: #888888;
-  
+
   --accent: #e2e2e2;
   --spotify-green: #1DB954;
-  
+
+  --rgb-purple: rgba(110, 20, 210, 0.18);
+  --rgb-blue:   rgba(20, 65, 230, 0.15);
+  --rgb-cyan:   rgba(0,  190, 155, 0.12);
+  --rgb-pink:   rgba(220, 0, 115, 0.10);
+
   --font-sans: 'Pixelify Sans', cursive, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -33,6 +38,26 @@ body {
   overflow-x: hidden;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  will-change: filter;
+  background:
+    radial-gradient(ellipse 70% 60% at 5% 45%,  var(--rgb-purple) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 70% at 95% 5%,  var(--rgb-blue)   0%, transparent 65%),
+    radial-gradient(ellipse 60% 55% at 70% 98%, var(--rgb-cyan)   0%, transparent 65%),
+    radial-gradient(ellipse 65% 50% at 30% 5%,  var(--rgb-pink)   0%, transparent 65%);
+  animation: rgbDrift 22s linear infinite;
+}
+
+@keyframes rgbDrift {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
 /* App Layout */
 .app-container {
   width: 100%;
@@ -42,21 +67,22 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  z-index: 10;
+  position: relative;
+  z-index: 1;
 }
 
 /* Common Components */
 .glass-panel {
   background: var(--glass-bg);
-  border: none;
+  border: 1px solid rgba(120, 60, 200, 0.08);
   border-radius: 24px;
   padding: 1.8rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(80, 40, 160, 0.04);
 }
 
 .glass-btn {
-  background: rgba(20, 20, 20, 0.6);
-  border: none;
+  background: rgba(10, 10, 22, 0.6);
+  border: 1px solid transparent;
   border-radius: 16px;
   padding: 1.1rem 1.25rem;
   display: flex;
@@ -100,9 +126,8 @@ a:active,
 @media (hover: hover) and (pointer: fine) {
   .glass-btn:hover {
     background: var(--glass-hover);
-    /* translateY is handled in component styles, keep background change */
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border-color: rgba(120, 60, 200, 0.25);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4), 0 0 14px rgba(100, 40, 200, 0.08);
   }
 }
 
